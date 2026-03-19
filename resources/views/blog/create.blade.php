@@ -62,11 +62,11 @@
 
 					<div class="mb-4">
 						<label for="article" class="form-label">Articolo</label>
-						<textarea name="article" class="form-control" id="article" cols="30" rows="4">{{old('article')}}</textarea>
+						<textarea name="article" class="form-control" id="article" cols="30" rows="6">{{old('article')}}</textarea>
 					</div>
 					
 					<div>
-						<button type="submit" class="btn btn-primary">Aggiungi post</button>
+						<button type="submit" class="btn btn-primary-custom">Aggiungi post</button>
 					</div>
 				</form>
 			</div>

@@ -7,8 +7,8 @@ class PublicController extends Controller
 {
 	public function Home() {
 
-		// Mostra i post
-		$posts = Blog::all();
+		// Mostra i post (l'ltimo inserito per primo)
+		$posts = Blog::latest()->get();
 		
 		// Ritorna la vista e passa i post dentro a $posts
 		return view('home', ['posts' => $posts]);

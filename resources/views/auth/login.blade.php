@@ -24,7 +24,7 @@
 					</div>
 					
 					<div class="mt-4">
-						<button type="submit" class="btn btn-primary">Accedi</button>
+						<button type="submit" class="btn btn-primary-custom">Accedi</button>
 					</div>
 
 				</form>

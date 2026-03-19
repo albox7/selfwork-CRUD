@@ -11,7 +11,11 @@
 			</div>
 			<div class="col-12 col-md-6 col-lg-6">
 				<p>In questo spazio troverai articoli, curiosità e approfondimenti scritti con passione dai membri della nostra comunità. Non siamo scienziati in camice bianco, ma persone comuni che hanno scoperto il piacere di sporcarsi le mani di terra e di non smettere mai di imparare.</p>
-				<p><a href="{{ route('register') }}">Unisciti a noi</a>, il giardino è grande e c'è posto per tutti.</p>
+				
+				@guest
+					<p class="ultra-strong"><a href="{{ route('register') }}">Unisciti a noi, il giardino è grande e c'è posto per tutti.</a></p>
+				@endguest
+			
 			</div>
 		</div>
 
@@ -21,9 +25,10 @@
 						<a href="{{ route('blog.show', $post->id) }}">
 							<div class="card h-100">
 								<img src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}">
-								<div class="card-body">
+								<div class="card-body d-flex flex-column">
 									<h4 class="card-title">{{ $post->title }}</h4>
 									<p class="card-text">{{ $post->subtitle }}</p>
+									<small class="mt-auto">Postato da {{ $post->user->name }}</small>
 								</div>
 							</div>
 						</a>

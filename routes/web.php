@@ -8,10 +8,14 @@ use Illuminate\Container\Attributes\Auth;
 // Routing delle view
 Route::get('/', [PublicController::class, 'Home'])->name('home');
 
-// Routing di Accesso e Registrazione (Fortify)
+// Routing del blog
 Route::get('/blog/create', [BlogController::class, 'CreatePost'])->name('blog.create')->middleware('auth');
 Route::get('/blog/{id}', [BlogController::class, 'ShowPost'])->name('blog.show');
-
-
-// Rounting storeage blog
 Route::post('/blog', [BlogController::class, 'StorePost'])->name('blog.store')->middleware('auth');
+Route::get('/blog/{id}/edit', [BlogController::class, 'EditPost'])->name('blog.edit')->middleware('auth');
+
+// Routing di modifica del post (metodo PUT)
+Route::put('/blog/{id}', [BlogController::class, 'UpdatePost'])->name('blog.update')->middleware('auth');
+
+// Routing di cancellazione del post (metodo DELETE)
+Route::delete('/blog/{id}', [BlogController::class, 'DeletePost'])->name('blog.delete')->middleware('auth');
