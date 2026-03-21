@@ -387,13 +387,10 @@ input.form-control[type="file"]:hover::file-selector-button {
 	padding: 4%;
 	box-shadow: 0 2px 0 rgba(0,0,0,.05);
 	transition: var(--base-transition);
-	border-style: dashed;
 }
 
 .card:hover {
 	box-shadow: 0 10px 1rem rgba(0, 0, 0, .07);
-	border-color: var(--gray-middle);
-	border-style: solid;
 }
 
 .card .card-body {
@@ -419,9 +416,36 @@ input.form-control[type="file"]:hover::file-selector-button {
 	font-weight: var(--fw-high);
 }
 
-.card p {
+.card .card-body p {
 	font-weight: var(--fw-normal);
 	line-height: 1.4;
+	margin-bottom: 1rem;
+}
+
+.card .card-footer {
+	background-color: transparent;
+	border: 0 none;
+}
+
+
+
+
+/* ------------------------------------------------ */
+/* Post author										*/
+
+small.author-tag>a {
+	border: 1px solid var(--tertiary);
+	font-weight: var(--fw-middle);
+	color: var(--tertiary);
+	padding: .3rem .5rem .3rem .6rem;
+	margin-left: .3rem;
+	border-radius: 10rem;
+	transition: var(--base-transition);
+}
+
+small.author-tag>a:hover {
+	background-color: var(--tertiary);
+	color: var(--bg-white);
 }
 
 

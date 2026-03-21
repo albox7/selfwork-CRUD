@@ -62,8 +62,10 @@
 				<h1>{{ $post->title }}</h1>
 				<h3>{{ $post->subtitle }}</h3>
 				<p>{{ $post->article }}</p>
-				<small class="d-block mb-5">Postato da {{ $post->user->name }}</small>
-				<a href="{{ '/' }}">&lsaquo;&nbsp; Indietro</a>
+				<small class="d-block mb-5 author-tag">
+					Postato da <a href="{{ route('user.posts', $post->user->id) }}">{{ $post->user->name }}</a>
+				</small>
+				<a href="{{ url()->previous() }}">&lsaquo;&nbsp; Indietro</a>
 			</div>
 			<div class="col-12 col-md-8 col-lg-6">
 				<img class="img-fluid img-post" src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}">

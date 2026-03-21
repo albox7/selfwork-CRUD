@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\BlogUpdateRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\BlogRequest;
+use App\Models\User;
 use App\Models\Blog;
 
 
@@ -82,5 +83,11 @@ class BlogController extends Controller
 		Storage::disk('public')->delete($post->image);
 		$post->delete();
 		return redirect()->route('home')->with('message', 'Post eliminato con successo!');
+	}
+
+	// Relazione One to Many
+	public function UserPosts($id) {
+		$user = User::findOrFail($id);
+		return view('blog.user-posts', ['user' => $user]);
 	}
 }

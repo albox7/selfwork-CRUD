@@ -21,18 +21,22 @@
 
 		<div class="row">
 			@foreach ($posts as $post)
-					<div class="col-12 col-md-4 col-lg-3 mb-4">
-						<a href="{{ route('blog.show', $post->id) }}">
-							<div class="card h-100">
-								<img src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}">
-								<div class="card-body d-flex flex-column">
-									<h4 class="card-title">{{ $post->title }}</h4>
-									<p class="card-text">{{ $post->subtitle }}</p>
-									<small class="mt-auto">Postato da {{ $post->user->name }}</small>
-								</div>
-							</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-4">
+    				<div class="card h-100 justify-content-between">
+        				<a href="{{ route('blog.show', $post->id) }}">
+							<img class="img-fluid" src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}">
+							<div class="card-body d-flex flex-column">
+            					<h4 class="card-title">
+                					{{ $post->title }}
+            					</h4>
+            					<p class="card-text">{{ $post->subtitle }}</p>
+        					</div>
 						</a>
-					</div>
+						<div class="card-footer">
+							<small class="author-tag">Postato da <a href="{{ route('user.posts', $post->user->id) }}">{{ $post->user->name }}</a></small>
+						</div>
+    				</div>
+				</div>
 			@endforeach
 		</div>
 

@@ -1,4 +1,4 @@
-<x-layout title="Blog / Nuovo post">
+<x-layout title="Crea nuovo post">
 
 	
 	<div class="container-fluid extra-padding-container">
